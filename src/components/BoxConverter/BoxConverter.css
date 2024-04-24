@@ -12,7 +12,7 @@
   box-shadow: rgba(35, 55, 80, 0.3) 0px 6px 12px;
 }
 .BoxConverter input{
- border: 1px solid;
+   border: 1px solid;
 }
 .BoxConverter .title-tab{
  padding-left: 10px;
@@ -43,7 +43,8 @@
 }
 .BoxConverter .Tab .tab:nth-child(1) , 
 .BoxConverter .Tab .tab:nth-child(4) {
-  border-top-left-radius: 5px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .BoxConverter .tb {
   color: rgb(0, 111, 232);

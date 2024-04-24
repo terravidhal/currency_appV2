@@ -8,8 +8,9 @@ import currencyapi from '@everapi/currencyapi-js'
 
 
 const Convert = () => {
-  const [indCountry, setIndCountry] = useState(47);
-  const [indCountry2, setIndCountry2] = useState(149);
+ // const [indCountry, setIndCountry] = useState(0); // 47
+ // const [indCountry2, setIndCountry2] = useState(0); // 149
+ // const [val, setVal] = useState("USD"); 
   const [OfCurrencyCountry, setOfCurrencyCountry] = useState("USD");
   const [toCurrencyCountry, setToCurrencyCountry] = useState("EUR");
   const [amount, setAmount] = useState(1);
@@ -17,47 +18,67 @@ const Convert = () => {
   const [totalExRate2, setTotalExRate2] = useState(0);
   const [status1, setStatus1] = useState(false);
   const [status2, setStatus2] = useState(false);
+  const [statusToggle, setStatusToggle] = useState(false);
   const [error1, setError1] = useState("");
  // const [error2, setError2] = useState("");
   const select1 = document.querySelector("form select#of");
   const select2 = document.querySelector("form select#toward");
 
-
   const onSubmitHandler = async(e) => {
     e.preventDefault();
-    getExchangeRate();
+    calcExchangeRate();
   }
 
   const toggleExchangeRate = () =>{
     console.log('test');
      const lastToCurrencyCountry = toCurrencyCountry;
-    // console.log(lastToCurrencyCountry);
      const lastOfCurrencyCountry = OfCurrencyCountry;
-   //  console.log(lastOfCurrencyCountry);
-    // setOfCurrencyCountry(lastToCurrencyCountry);
+
    
-    select1.value === lastToCurrencyCountry ?  select1.value == lastOfCurrencyCountry :  select1.value == lastToCurrencyCountry;
-    select2.value === lastToCurrencyCountry ?  select2.value == lastOfCurrencyCountry : select2.value == lastToCurrencyCountry;
-   //  setToCurrencyCountry(lastOfCurrencyCountry);
-    //select2.value = lastOfCurrencyCountry;
+    if (statusToggle === false) {
+      select1.value = lastToCurrencyCountry ;
+     // setOfCurrencyCountry(lastToCurrencyCountry);
+      select2.value = lastOfCurrencyCountry ;
+     // setToCurrencyCountry(lastOfCurrencyCountry);
+      setIndCountry(149);
+      setIndCountry2(47);
+      setStatusToggle(true)
+    } else {
+       select1.value = lastOfCurrencyCountry ;
+      //setOfCurrencyCountry(lastOfCurrencyCountry);
+      select2.value = lastToCurrencyCountry ;
+      //  setToCurrencyCountry(lastToCurrencyCountry);
+      setIndCountry(47);
+      setIndCountry2(149);
+      setStatusToggle(false)
+    }
+   
   }
 
 
 
 
- 
-  
-
-
-
-  
-
   useEffect(() => {
-   
   }, []);
 
 
-  const  getExchangeRate = () =>{
+
+  
+
+  const  loadFlagAuto = (elt) =>{
+    let code = ''
+   for (const key in country_list) {
+    if (Object.hasOwnProperty.call(country_list, key)) {
+      if (elt === key) {
+        code = country_list[key];
+      }
+    }
+   }
+   return code;
+}
+
+
+  const  calcExchangeRate = () =>{
 
     const client1 = new currencyapi(API_KEY)
         client1.latest({
@@ -84,7 +105,6 @@ const Convert = () => {
     }).catch((err2) => {
          console.log('err2',err2);
     });
-
   }  
 
 
@@ -96,17 +116,19 @@ const Convert = () => {
        <div className="convert-inputs flex">
              <div className="cvrt amount">
                  <label htmlFor="amount">Amount</label>
-                 <input id='amount' type="text" value={amount} onChange={(e)=>setAmount(e.target.value, 10)}/>
+                 <input id='amount' type="text" value={amount} onChange={(e)=>setAmount(e.target.value)}/>
              </div>
               <div className="cvrt of">
                  <label htmlFor="of">Of</label>
                  <div className="contains-of">
-                     <img src={"https://flagcdn.com/48x36/"+country_code[indCountry2].toLowerCase()+".png"} alt="flag" />
-                     <select id='of' defaultValue={OfCurrencyCountry} onChange={(e)=>setOfCurrencyCountry(e.target.value)}>
+                     <img src={"https://flagcdn.com/48x36/"+loadFlagAuto(OfCurrencyCountry).toLowerCase()+".png"} alt="flag" />
+                     <select id='of'>
                        {
                          Object.keys(country_list).map((currency_code, i)=>{
                              return (
-                               <option key={currency_code} value={currency_code} onClick={()=>{setIndCountry2(i)}}>{currency_code}</option>
+                               <option key={currency_code} selected={currency_code === "USD" ?  true : false} 
+                               value={currency_code} 
+                               onClick={()=>{setOfCurrencyCountry(currency_code)}}>{currency_code}</option>
                              );
                          })
                        }
@@ -121,13 +143,15 @@ const Convert = () => {
              <div className="cvrt toward">
                  <label htmlFor="toward">towards</label>
                  <div className="contain-toward">
-                     <img src={"https://flagcdn.com/48x36/"+country_code[indCountry].toLowerCase()+".png"} alt="flag" />
-                     <select id='toward' defaultValue={toCurrencyCountry} onChange={(e)=>setToCurrencyCountry(e.target.value)}>
+                     <img src={"https://flagcdn.com/48x36/"+loadFlagAuto(toCurrencyCountry).toLowerCase()+".png"} alt="flag" />
+                     <select id='toward'>
                         {
-                          Object.keys(country_list).map((currency_code, i)=>{
+                          Object.keys(country_list).map((currency_code, i)=>{ 
                               return (
                                 <>
-                                <option key={currency_code} value={currency_code} onClick={()=>{setIndCountry(i)}} >{currency_code}</option>
+                                <option key={currency_code} selected={currency_code === "EUR" ?  true : false} 
+                                value={currency_code} 
+                                onClick={()=>{setToCurrencyCountry(currency_code)}} >{currency_code}</option>
                                 </>
                               );
                           })
