@@ -1,0 +1,10 @@
+.Header .title{
+   padding-top: 70px;
+}
+.Header h1{
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.Header h3{
+  opacity: 0.4;
+}

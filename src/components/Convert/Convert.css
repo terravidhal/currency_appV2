@@ -1,0 +1,163 @@
+.Convert {
+}
+
+.Convert .convert-inputs{
+   gap: 20px;
+}
+.Convert .btn-ctn{
+   display: flex;
+   align-items: flex-end;
+   cursor: pointer;
+}
+.Convert .cvrt {
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+}
+.Convert label {
+    color: rgb(20, 30, 55);
+    font-weight: 600;
+}
+.Convert .cvrt  input{
+  height: 49.3333px;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 6px;
+  box-shadow: rgba(0, 17, 51, 0.05) 0px 3px 15px;
+  padding: 12px;
+  color: rgb(20, 30, 55);
+  box-sizing: border-box;
+}
+.Convert .contains-of{
+  height: 49.3333px;
+  border: 1px solid rgb(221, 221, 221);
+   border-radius: 6px;
+  box-shadow: rgba(0, 17, 51, 0.05) 0px 3px 15px;
+  padding: 12px;
+  color: rgb(20, 30, 55);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Convert .contains-of img{
+  width: 21.667px;
+  height: 15.667px;
+}
+.Convert .contains-of select{
+  width: 90%;
+  background-color: white;
+  cursor: pointer;
+}
+.Convert .contain-toward{
+  height: 49.3333px;
+  border: 1px solid rgb(221, 221, 221);
+   border-radius: 6px;
+  box-shadow: rgba(0, 17, 51, 0.05) 0px 3px 15px;
+  padding: 12px;
+  color: rgb(20, 30, 55);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Convert .contain-toward img{
+    width: 21.667px;
+    height: 15.667px;
+}
+.Convert .contain-toward select{
+    width: 90%;
+    background-color: white;
+    cursor: pointer;
+}
+.Convert .btn-transact {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 50%;
+    padding: 16px;
+    width: 49px;
+    height: 49px;
+}
+.Convert .btn-transact img{
+    width: 16px;
+    height: 16px;
+    color: rgb(0, 108, 224);
+}
+.Convert .btn-transact img{
+    width: 20px;
+}
+.Convert .convert-results{
+   padding-top: 20px;
+}
+.Convert .convert-results .line1{
+    color: rgb(92, 102, 123);
+  font-weight: 600;
+  margin: 0px;
+  font-size: 16px;
+  max-width: 100%;
+}
+.Convert .convert-results .line2{
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(46, 60, 87);
+}
+.Convert .convert-results .line2 .nb2{
+    color: rgb(161, 166, 176);
+}
+.Convert .convert-results .line3{
+    text-align: left;
+    color: rgb(92, 102, 123);
+    font-size: 14px;
+}
+.Convert .error{
+  color: rgb(161, 166, 176);
+  font-weight: 600;
+  margin: 0px;
+  font-size: 25px;
+  max-width: 100%;
+}
+.Convert .notify{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px;
+  background: rgb(242, 247, 254);
+  border-radius: 6px;
+  max-width: 500px;
+  font-size: 11px;
+  margin: 0px 8px 8px 0px;
+  color: rgb(55, 60, 73);
+  height: 65.5px;
+}
+.Convert .notify .notify-icon{
+  margin-right: 15px;
+}
+.Convert .notify .notify-icon img{
+  color: rgb(92, 102, 123);
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+}
+.Convert .notify .notify-link{
+  color: rgb(0, 108, 224);
+  border-bottom: 1px solid rgb(0, 108, 224);
+}
+.Convert .convert-actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+.Convert .validate-btn button{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  font-weight: 600;
+  padding: 0px 20px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  background: rgb(0, 113, 235);
+  border-radius: 8px;
+  height: 50px;
+}

@@ -1,0 +1,78 @@
+.BoxConverter {
+  width: 950px;
+  min-height: 330.833px;
+  /* min-height: 105px; */
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -30%);
+  border-radius: 8px;
+  box-shadow: rgba(35, 55, 80, 0.3) 0px 6px 12px;
+}
+.BoxConverter input{
+ border: 1px solid;
+}
+.BoxConverter .title-tab{
+ padding-left: 10px;
+}
+.BoxConverter .img0{
+   width: 24px;
+   height: 24px;
+}
+
+.BoxConverter .img3{
+   width: 20px;
+   height: 20px;
+}
+.BoxConverter .img1, .BoxConverter .img2{
+   width: 15px;
+   height: 15px;
+}
+
+.BoxConverter .Tab {
+  display: flex;
+}
+.BoxConverter .Tab .tab {
+  flex: 1;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.BoxConverter .Tab .tab:nth-child(1) , 
+.BoxConverter .Tab .tab:nth-child(4) {
+  border-top-left-radius: 5px;
+}
+.BoxConverter .tb {
+  color: rgb(0, 111, 232);
+  background-color: white;
+  cursor: pointer;
+}
+.BoxConverter .tb.selectedTab {
+  color: rgb(0, 111, 232);
+  background-color: white;
+  font-weight: bold;
+}
+.BoxConverter .tb.selectedTab .img0,
+.BoxConverter .tb.selectedTab .img1 ,
+.BoxConverter .tb.selectedTab .img2,
+.BoxConverter .tb.selectedTab .img3    {
+  filter: invert(38%) sepia(73%) saturate(7498%) hue-rotate(201deg) brightness(97%) contrast(101%);
+}
+.BoxConverter .tb.nonSelectedTab .img0,
+.BoxConverter .tb.nonSelectedTab .img1 ,
+.BoxConverter .tb.nonSelectedTab .img2,
+.BoxConverter .tb.nonSelectedTab .img3    {
+  filter: invert(26%) sepia(57%) saturate(387%) hue-rotate(172deg) brightness(98%) contrast(90%);
+}
+.BoxConverter .tb.nonSelectedTab {
+  color: black;
+  background-color: #efefef;
+  background-color: rgb(240, 245, 250);
+  color: rgb(55, 80, 110);
+}
+.BoxConverter .Results {
+  /* height: calc(330.833px - 56px); */
+  padding: 40px;
+}
