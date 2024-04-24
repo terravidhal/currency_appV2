@@ -1,10 +1,37 @@
+.Header {
+   height: 50vh;
+   background-color: #04001e;
+   position: relative;
+}
+.Header .circle1{
+   position: absolute;
+   background-color: orange;
+   height: 600px;
+   width: 600px;
+   border-radius: 50%;
+   top: -95px;
+   right: -94px;
+}
+.Header .circle2{
+   position: absolute;
+   background-color: #04001e;
+   height: 500px;
+   width: 500px;
+   border-radius: 50%;
+   top: -50px;
+   right: -150px;
+}
 .Header .title{
    padding-top: 70px;
+   position: relative;
+   z-index: 99;
 }
 .Header h1{
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 600;
+  opacity: 0.8;
 }
 .Header h3{
-  opacity: 0.4;
+  opacity: 0.5;
+  font-size: 1.1rem;
 }

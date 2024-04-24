@@ -66,7 +66,7 @@ const Convert = () => {
         }).then(res => {
           // console.log('RESSS',res);
            console.log('RESSS+',res.data[toCurrencyCountry]['value']);  // taux de change //ExchangeRate
-           setTotalExRate((amount * res.data[toCurrencyCountry]['value']));
+           setTotalExRate(amount * (res.data[toCurrencyCountry]['value']));
           setStatus1(true);
     }).catch((err1) => {
         console.log('err1',err1);
@@ -79,7 +79,7 @@ const Convert = () => {
         }).then(res => {
           // console.log('RESSS2',res);
            console.log('RESSS2+',res.data[OfCurrencyCountry]['value']);
-           setTotalExRate2((amount * res.data[OfCurrencyCountry]['value']));
+           setTotalExRate2(amount * (res.data[OfCurrencyCountry]['value']));
           setStatus2(true);
     }).catch((err2) => {
          console.log('err2',err2);

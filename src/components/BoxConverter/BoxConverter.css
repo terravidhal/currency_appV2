@@ -1,4 +1,5 @@
 .BoxConverter {
+  z-index: 99;
   width: 950px;
   min-height: 330.833px;
   /* min-height: 105px; */
